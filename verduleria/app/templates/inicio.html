@@ -1,0 +1,17 @@
+<h2>Facturas:</h2>
+
+
+
+			{% for x in inicio %}
+            
+		 	<form method="POST" action="{% url 'cualquiera' compras=x.nrofactura.id   %}">
+					{% csrf_token %}
+
+					<input type="submit" value="{{ x.compras }}" >
+
+			</form>
+ 
+
+		 		  <p> {{ x.producto }} - {{ x.precio }} - {{x.nrofactura}} - {{x.cliente}} - {{x.totalin}} - {{x.feha}} </p>
+				
+{% endfor %}
